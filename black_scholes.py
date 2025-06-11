@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import norm
 
-def black_scholes(S, K, T, r, sigma, option_type='call'):
+def black_scholes_price(S, K, T, r, sigma, option_type='call'):
     """
     Calculates the Black-Scholes option price.
 
@@ -35,8 +35,8 @@ if __name__ == '__main__':
     r = 0.05 # Risk-free interest rate (5%)
     sigma = 0.2 # Volatility (20%)
 
-    call_price = black_scholes(S, K, T, r, sigma, option_type='call')
-    put_price = black_scholes(S, K, T, r, sigma, option_type='put')
+    call_price = black_scholes_price(S, K, T, r, sigma, option_type='call')
+    put_price = black_scholes_price(S, K, T, r, sigma, option_type='put')
 
     print(f"The Black-Scholes call option price is: {call_price:.2f}")
     print(f"The Black-Scholes put option price is: {put_price:.2f}")

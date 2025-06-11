@@ -23,12 +23,20 @@ def black_scholes_greeks(S, K, T, r, sigma, option_type='call'):
     return {"delta": delta, "gamma": gamma, "vega": vega, "theta": theta, "rho": rho}
 
 if __name__ == '__main__':
-    # define stuff here
-    S = 
-    K = 
-    T = 
-    r = 
-    sigma = 
+    # Example parameters
+    S = 100      # Spot price
+    K = 100      # Strike price
+    T = 1        # Time to maturity (1 year)
+    r = 0.05     # Risk-free interest rate (5%)
+    sigma = 0.2  # Volatility (20%)
 
     call_greeks = black_scholes_greeks(S, K, T, r, sigma, option_type='call')
     put_greeks = black_scholes_greeks(S, K, T, r, sigma, option_type='put')
+
+    print("Call Option Greeks:")
+    for greek, value in call_greeks.items():
+        print(f"  {greek.capitalize()}: {value:.6f}")
+
+    print("\nPut Option Greeks:")
+    for greek, value in put_greeks.items():
+        print(f"  {greek.capitalize()}: {value:.6f}")

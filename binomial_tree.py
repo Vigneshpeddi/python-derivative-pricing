@@ -36,4 +36,7 @@ def binomial_tree_option_pricing(S0, K, T, r, sigma, N, option_type='call'):
     return option_values[0]
 
 if __name__ == '__main__':
-    # call the function here
+    # Example, change to what you need
+    price = binomial_tree_option_pricing(S0=100, K=100, T=1, r=0.05, sigma=0.2, N=500, option_type='call')
+    print(f"Option Price: {price:.4f}")
+
